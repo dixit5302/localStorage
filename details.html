@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="details">Click here</button>
+    <p id="enter"></p>
+    <script>
+        var userDetails = document.getElementById("details")
+        var enterPass = document.getElementById("enter")
+        userDetails.addEventListener('click', function(){
+            let a = localStorage.getItem("item1") 
+            let b = localStorage.getItem("item2") 
+
+            enterPass.innerText +=`
+                                 username:  ${a}
+                                 password: ${b}`
+   
+        })
+ </script>
+</body>
+</html>

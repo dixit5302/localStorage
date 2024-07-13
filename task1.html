@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 300px;
+            height: 100px;
+            border: 2px solid black;
+            padding-top: 50px;
+            padding-left: 80px;
+            background-color: aqua;
+            border-radius: 20px;
+            border: none;
+        }
+        p{
+            display: inline;
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+            padding: 10px 30px;
+            background-color: aliceblue;
+            font-size: 40px;
+        }
+        button{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 30px;
+            border: none;
+            background-color: black;
+            color: whitesmoke;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button id="minus-btn" onclick="minusBtn()">-</button>
+        <p id="value">0</p>
+        <button id="plus-btn" onclick="plusBtn()">+</button>
+       
+    </div>
+
+    <script>
+        
+        let inputValue = document.getElementById("value")
+
+        let count = 0
+
+        // color changing according to the value
+        function colorChange(){
+        if(count>0){
+            inputValue.style.color = 'green'
+        } 
+       else if(count<0){
+            inputValue.style.color = 'red'
+        }
+        else{
+            inputValue.style.color = 'black'
+        }
+        }
+       
+
+        // PLUS BUTTON
+        
+        function minusBtn(){
+            count--
+            inputValue.innerText = count
+            colorChange()
+        }
+
+        // MINUS BUTTON
+        function plusBtn(){
+            count++
+            inputValue.innerText = count 
+            colorChange()
+    }
+
+   
+
+    console.log(localStorage.getItem("myLeads"))
+    </script>
+</body>
+</html>
